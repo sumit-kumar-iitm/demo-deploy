@@ -69,7 +69,7 @@ if [[ $GIT_BRANCH == */release* ]]; then
    #export CICDProfile=scm.build
 
    # All maven commands in this scrip must use the -s option
-   export MAVEN_COMMAND="mvn -B -s settings.xml"
+   export MAVEN_COMMAND="./mvnw -B -s settings.xml"
 
    # build and publish/install to nexus app artifact (CI Build)
    $MAVEN_COMMAND $MVN_TARGETS #$MVNPARAMS
