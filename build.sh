@@ -56,9 +56,11 @@ if [[ $GIT_BRANCH == */release* ]]; then
 	fi
 
 	export FINAL_VERSION=$RELEASE_VERSION.$BUILD_NUMBER
+    git tag $FINAL_VERSION
+    git push origin release
 	echo "Building version $FINAL_VERSION"
 
-   find . -type f -name "pom.xml" -exec sed -i -e "s/0\.0\.1-SNAPSHOT/${FINAL_VERSION}/g" {} +
+    find . -type f -name "pom.xml" -exec sed -i -e "s/0\.0\.1-SNAPSHOT/${FINAL_VERSION}/g" {} +
 
    #localPath=`pwd`
    #$localPath/checkmarx.sh
