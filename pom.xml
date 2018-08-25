@@ -51,7 +51,7 @@
         </repository>
         <snapshotRepository>
             <id>demodeploy.artifact.snapshot</id>
-            <name></name>
+            <name>demodeploy snapshot</name>
             <url>s3://obs-repo/demodeploy/snapshot</url>
         </snapshotRepository>
     </distributionManagement>
