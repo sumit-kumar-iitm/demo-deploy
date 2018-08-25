@@ -73,3 +73,4 @@ if [[ $GIT_BRANCH == release* ]]; then
 
    # build and publish/install to nexus app artifact (CI Build)
    $MAVEN_COMMAND $MVN_TARGETS #$MVNPARAMS
+fi
