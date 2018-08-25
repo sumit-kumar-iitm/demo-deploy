@@ -1,2 +1,2 @@
 echo "hello world"
-git logs -n 10
+git log -n 10
