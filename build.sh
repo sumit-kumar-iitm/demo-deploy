@@ -57,7 +57,7 @@ if [[ $GIT_BRANCH == */release* ]]; then
 
 	export FINAL_VERSION=$RELEASE_VERSION.$BUILD_NUMBER
     git tag $FINAL_VERSION
-    git push origin release $FINAL_VERSION
+    git push release $FINAL_VERSION
 	echo "Building version $FINAL_VERSION"
 
     find . -type f -name "pom.xml" -exec sed -i -e "s/0\.0\.1-SNAPSHOT/${FINAL_VERSION}/g" {} +
