@@ -76,7 +76,8 @@ if [[ $GIT_BRANCH == */release* ]]; then
 fi
 
 if [[ $GIT_BRANCH == */release* ]]; then
-#   git config --global push.default simple
+   git config --global push.default simple
+   echo ${GIT_PWD}
 #   echo ${GIT_PWD} > /tmp/gitcredfile
 #   trap "shred -n 25 -u -z /tmp/gitcredfile" EXIT
 #   export SLUSER=$(echo $GIT_PWD | sed 's/^.*\/\///' | sed 's/:.*//')
