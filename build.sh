@@ -82,12 +82,12 @@ if [[ $GIT_BRANCH == */release* ]]; then
    export SLUSER=$(echo $GIT_PWD | sed 's/^.*\/\///' | sed 's/:.*//')
    echo "GIT USER IS"
    echo $SLUSER
-   git config --global user.name "$SLUSER" --quiet
-   git config --global user.email $SLUSER@intuit.com --quiet
+   git config --global user.name "sumit-kumar-iitm" --quiet
+   git config --global user.email "sumit.kumar1310@gmail.com" --quiet
    git config --global credential.helper "store --file=/tmp/gitcredfile" –quiet
    git tag -m "SCM Label from CICD service" -a "${BUILDER_NAME}_${GIT_BRANCH}_${FINAL_VERSION}_${BUILD_NUMBER}"
    git push --tag
 
 else
-   export tepFile="tep_trigger_file.tgz"
+#   export tepFile="tep_trigger_file.tgz"
 fi
