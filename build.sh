@@ -56,8 +56,6 @@ if [[ $GIT_BRANCH == */release* ]]; then
 	fi
 
 	export FINAL_VERSION=$RELEASE_VERSION.$BUILD_NUMBER
-    git tag $FINAL_VERSION
-    git push release $FINAL_VERSION
 	echo "Building version $FINAL_VERSION"
 
     find . -type f -name "pom.xml" -exec sed -i -e "s/0\.0\.1-SNAPSHOT/${FINAL_VERSION}/g" {} +
@@ -75,4 +73,21 @@ if [[ $GIT_BRANCH == */release* ]]; then
 
    # build and publish/install to nexus app artifact (CI Build)
    $MAVEN_COMMAND $MVN_TARGETS #$MVNPARAMS
+fi
+
+if [[ $GIT_BRANCH == release* ]]; then
+   git config --global push.default simple
+   echo ${GIT_PWD} > /tmp/gitcredfile
+   trap "shred -n 25 -u -z /tmp/gitcredfile" EXIT
+   export SLUSER=$(echo $GIT_PWD | sed 's/^.*\/\///' | sed 's/:.*//')
+   echo "GIT USER IS"
+   echo $SLUSER
+   git config --global user.name "$SLUSER" --quiet
+   git config --global user.email $SLUSER@intuit.com --quiet
+   git config --global credential.helper "store --file=/tmp/gitcredfile" –quiet
+   git tag -m "SCM Label from CICD service" -a "${BUILDER_NAME}_${GIT_BRANCH}_${FINAL_VERSION}_${BUILD_NUMBER}"
+   git push --tag
+
+else
+   export tepFile="tep_trigger_file.tgz"
 fi
