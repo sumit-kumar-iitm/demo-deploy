@@ -75,7 +75,7 @@ if [[ $GIT_BRANCH == */release* ]]; then
    $MAVEN_COMMAND $MVN_TARGETS #$MVNPARAMS
 fi
 
-if [[ $GIT_BRANCH == release* ]]; then
+if [[ $GIT_BRANCH == */release* ]]; then
    git config --global push.default simple
    echo ${GIT_PWD} > /tmp/gitcredfile
    trap "shred -n 25 -u -z /tmp/gitcredfile" EXIT
