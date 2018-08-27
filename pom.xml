@@ -4,7 +4,11 @@
 
     <groupId>com.observeai.example</groupId>
     <artifactId>demodeploy</artifactId>
+<<<<<<< HEAD
     <version>0.0.2-SNAPSHOT</version>
+=======
+    <version>0.0.1</version>
+>>>>>>> 600475bd6f9b377d979e30758b4d06b888e2b4aa
     <packaging>jar</packaging>
 
     <name>demodeploy</name>
@@ -58,8 +62,7 @@
     <scm>
         <connection>scm:git:https://github.com/sumit-kumar-iitm/demo-deploy.git</connection>
         <url>https://github.com/sumit-kumar-iitm/demo-deploy</url>
-        <developerConnection>scm:git:https://github.com/sumit-kumar-iitm/demo-deploy.git</developerConnection>
-      <tag>HEAD</tag>
+        <developerConnection>scm:git:https://github.com/sumit-kumar-iitm/demo-deploy.git</developerConnection>s
   </scm>
 
     <build>
