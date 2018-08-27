@@ -58,12 +58,12 @@ if [[ $GIT_BRANCH == */release* ]]; then
 	export FINAL_VERSION=$RELEASE_VERSION.$BUILD_NUMBER
 	echo "Building version $FINAL_VERSION"
 
-    find . -type f -name "pom.xml" -exec sed -i -e "s/0\.0\.1-SNAPSHOT/${FINAL_VERSION}/g" {} +
+    #find . -type f -name "pom.xml" -exec sed -i -e "s/0\.0\.1-SNAPSHOT/${FINAL_VERSION}/g" {} +
 
    #localPath=`pwd`
    #$localPath/checkmarx.sh
 
-   export MVN_TARGETS="clean deploy -Djavax.xml.accessExternalSchema=all"
+   export MVN_TARGETS="release:clean release:prepare release:perform -Djavax.xml.accessExternalSchema=all"
    #export TargetGTGRepo=ENG.CTG.Intuit-Releases
    #export MVNPARAMS="-Dsource.label=$GIT_COMMIT -Durl=$NEXUS_REPO_URL/$TargetGTGRepo/ -DaltDeploymentRepository=nexusserver::default::$NEXUS_REPO_URL/$TargetGTGRepo/ -Ddev.repo.url=$NEXUS_REPO_URL/$TargetGTGRepo/ -Drelease.repo.url=$NEXUS_REPO_URL/$TargetGTGRepo/ -DSTD_REPO_ID=nexusrelserver"
    #export CICDProfile=scm.build
@@ -86,7 +86,7 @@ if [[ $GIT_BRANCH == */release* ]]; then
    git config --global user.name "sumit-kumar-iitm" --quiet
    git config --global user.email "sumit.kumar1310@gmail.com" --quiet
    git config --global credential.helper "store --file=/tmp/gitcredfile" --quiet
-   git tag -m "SCM Label from CICD service" -a "${BUILDER_NAME}_${GIT_BRANCH}_${FINAL_VERSION}_${BUILD_NUMBER}"
+   git tag -m "SCM Label from CICD service" -a "${GIT_BRANCH}_${FINAL_VERSION}_${BUILD_NUMBER}"
    git push --tag
 else
    export tepFile="tep_trigger_file.tgz"
