@@ -63,7 +63,7 @@ if [[ $GIT_BRANCH == */release* ]]; then
    #localPath=`pwd`
    #$localPath/checkmarx.sh
 
-   export MVN_TARGETS="release:clean release:prepare release:update-versions release:perform -Djavax.xml.accessExternalSchema=all"
+   export MVN_TARGETS="release:clean release:prepare release:perform -Djavax.xml.accessExternalSchema=all"
    #export TargetGTGRepo=ENG.CTG.Intuit-Releases
    #export MVNPARAMS="-Dsource.label=$GIT_COMMIT -Durl=$NEXUS_REPO_URL/$TargetGTGRepo/ -DaltDeploymentRepository=nexusserver::default::$NEXUS_REPO_URL/$TargetGTGRepo/ -Ddev.repo.url=$NEXUS_REPO_URL/$TargetGTGRepo/ -Drelease.repo.url=$NEXUS_REPO_URL/$TargetGTGRepo/ -DSTD_REPO_ID=nexusrelserver"
    #export CICDProfile=scm.build
