@@ -61,7 +61,7 @@
         <connection>scm:git:https://github.com/sumit-kumar-iitm/demo-deploy.git</connection>
         <url>https://github.com/sumit-kumar-iitm/demo-deploy</url>
         <developerConnection>scm:git:https://github.com/sumit-kumar-iitm/demo-deploy.git</developerConnection>
-    <tag>HEAD</tag>
+        <tag>HEAD</tag>
   </scm>
 
     <build>
