@@ -11,12 +11,10 @@ export JAVA_OPTS="-Xms512m -Xmx2048m -XX:MaxPermSize=1024m"
 
 commit=$(git rev-parse HEAD)
 
-echo "Last commit id ${commit}"
-echo "GIT BRANCH $GIT_BRANCH"
 
 # Define params based on whether this is a snapshot or Release build
 # Make it case insensitive (Release or release)
-if [[ $GIT_BRANCH == origin/release ]]; then
+if [[ $GIT_BRANCH == */release* ]]; then
 
 	echo "Running a Release build"
 
