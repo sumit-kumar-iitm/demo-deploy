@@ -59,9 +59,9 @@
 
 
     <scm>
-        <connection>scm:git:https://github.com/sumit-kumar-iitm/demo-deploy.git</connection>
-        <url>https://github.com/sumit-kumar-iitm/demo-deploy</url>
-        <developerConnection>scm:git:https://github.com/sumit-kumar-iitm/demo-deploy.git</developerConnection>
+        <connection>scm:git:https://sumit-kumar-iitm:Sumit_123@github.com/sumit-kumar-iitm/demo-deploy.git</connection>
+        <url>https://sumit-kumar-iitm:Sumit_123@github.com/sumit-kumar-iitm/demo-deploy</url>
+        <developerConnection>scm:git:https://sumit-kumar-iitm:Sumit_123@github.com/sumit-kumar-iitm/demo-deploy.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
