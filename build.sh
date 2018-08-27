@@ -14,7 +14,7 @@ commit=$(git rev-parse HEAD)
 
 # Define params based on whether this is a snapshot or Release build
 # Make it case insensitive (Release or release)
-if [ $GIT_BRANCH == */release* ]; then
+if [[ "$GIT_BRANCH" == "*/release*" ]]; then
 
 	echo "Running a Release build"
 
